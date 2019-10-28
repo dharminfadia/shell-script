@@ -5,8 +5,10 @@ A shell script to read file line by line
 Note: In the input file you need to have a new line ends with. See `input.txt`.
 
 # Run script
+```
 cd path_to_shell-read-file/
 chmod u+x read.sh
+```
 
 # With no input
 ```
