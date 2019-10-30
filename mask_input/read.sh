@@ -33,8 +33,8 @@ do
 done < "$INPUT_FILE"
 
 # Check if give values exists in the file or not
-if [[ -v "INPUT_MAP[$PARAM1]" ]] ; then
-    if [[ -v "INPUT_MAP[$PARAM2]" ]] ; then
+if [[ ${INPUT_MAP[$PARAM1]} ]]; then
+    if [[ ${INPUT_MAP[$PARAM2]} ]]; then
         #
         # Example:
         #
@@ -46,10 +46,10 @@ if [[ -v "INPUT_MAP[$PARAM1]" ]] ; then
         echo ${INPUT_MAP[$PARAM1]}
         echo ${INPUT_MAP[$PARAM2]}
     else
-        echo "Invalid valid for second argument i.e., $PARAM2"
+        echo "Invalid value for second argument i.e., $PARAM2"
     fi
 else
-    echo "Invalid valid for first argument i.e., $PARAM1"
+    echo "Invalid value for first argument i.e., $PARAM1"
 fi
 
 # use VALUE1 and VALUE2 here
