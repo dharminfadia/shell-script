@@ -1,11 +1,21 @@
 #!/bin/bash
 
-# Reading parameters
-PARAM0=$1
-PARAM1=$2
+# Validating the parameters
+if [ -z "$1" ]
+then
+    echo "Please provide first parameter"
+    exit
+fi
 
-echo "args - $PARAM0"
-echo "args - $PARAM1"
+if [ -z "$2" ]
+then
+    echo "Please provide second parameter"
+    exit
+fi
+
+# Reading parameters
+PARAM1=$1
+PARAM2=$2
 
 # File location
 INPUT_FILE='./input.txt'
@@ -22,6 +32,24 @@ do
     INPUT_MAP[$KEY]=$VALUE
 done < "$INPUT_FILE"
 
-# Mapped values
-echo "Mapped key - 0: ${INPUT_MAP[$PARAM0]}"
-echo "Mapped key - 1: ${INPUT_MAP[$PARAM1]}"
+# Check if give values exists in the file or not
+if [[ -v "INPUT_MAP[$PARAM1]" ]] ; then
+    if [[ -v "INPUT_MAP[$PARAM2]" ]] ; then
+        #
+        # Example:
+        #
+        # VALUE1=INPUT_MAP[$PARAM1]
+        # VALUE2=INPUT_MAP[$PARAM2]
+        #
+        #
+        echo "Values are present the file"
+        echo ${INPUT_MAP[$PARAM1]}
+        echo ${INPUT_MAP[$PARAM2]}
+    else
+        echo "Invalid valid for second argument i.e., $PARAM2"
+    fi
+else
+    echo "Invalid valid for first argument i.e., $PARAM1"
+fi
+
+# use VALUE1 and VALUE2 here
