@@ -31,4 +31,4 @@ The above will display the data
 
 
 # Author
-ParthaSaradhiKonda<<parthasaradhi.konda@gmail.com>>
+Dharmin Fadia<<dharminfadia@gmail.com>>
